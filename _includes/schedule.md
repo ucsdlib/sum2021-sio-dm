@@ -10,12 +10,12 @@ NOTE: Because Monday (February 15th) falls on President's Day, we will meet on W
   - 
   - 
   -
-3. Feb. 22 - 
-4. Feb 24 - 
-5. Feb. 29 - Databases and SQL
+3. Feb. 22 - (Juliane)
+4. Feb 24 -  (Hyeonsu)
+5. Feb. 29 - Databases and SQL (Tim)
     - Selecting, sorting, and filtering data
     - Calculating new values
     - Aggregation 
-6. March 2 - Databases & SQL
+6. March 2 - Databases & SQL (Hyeonsu)
     - Combining, creating & modifying data 
     - Programming with databases 
