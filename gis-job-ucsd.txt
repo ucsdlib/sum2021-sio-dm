@@ -1,0 +1,58 @@
+**Geographic Information Systems (GIS) Librarian** 
+
+**Reference & Research Advisory Services Program**
+
+The University of California San Diego Library seeks applications from highly motivated, innovative, collaborative, and service-oriented professionals to join the Library as our GIS Librarian (Assistant, Associate or Full Librarian). This position reports to the Program Director of the Library’s Reference and Research Advisory Services (RRAS). 
+The University of California San Diego Library is committed to supporting academic excellence and diversity within the faculty, staff, and student body.
+
+**The University and the Library** 
+
+With 34,000 students, UC San Diego is dedicated to the advancement of knowledge through excellence in education and research at the undergraduate, graduate, professional school and postdoctoral levels.  UC San Diego has been recognized as one of the top 10 public universities in the nation by US News & World Report, as the 14th best university in the world by the Center for World-Class Universities at Shanghai Jiao Tong University. In 2013, for the fourth consecutive year UC San Diego was ranked 1st in the nation by the Washington Monthly’s College Guide based on the positive impact the university has had on the country in terms of enabling social mobility, research productivity and civic engagement. 
+Reference & Research Advisory Services
+The Reference & Research Advisory Services Program is responsible for providing reference and research advisory services in support of UC San Diego’s teaching, learning and research activities. The Program strives to provide reference and research support expertise, enable learners to become effective, efficient, and ethical information users, and encourages self-directed inquiry. GIS and Data are major areas that the Program supports. Within this framework, the Program’s focus is to provide students, faculty and staff with specialized, point-of-need, or embedded assistance that will enable them to fulfill their information needs.
+Responsibilities of the Position
+As the use of geospatial data across academic disciplines and the broader UC San Diego campus continues to expand, the GIS Librarian plays a critical role in leading and developing the Library's GIS services for learning, teaching, and research. GIS is a vital component of RRAS, and the GIS Librarian is the leader within the UC San Diego Library for developing, managing and providing geospatial data and services. Since the position has remained unfilled for a few years, the new GIS Librarian will have the opportunity to rebuild our GIS services and play a pivotal role in moving RRAS forward. S/he will apply best practices in geospatial data management and curation for both preservation and re-use. S/he will implement cutting-edge web-based technologies for augmentation, presentation, or manipulation of geospatial data. This position also supports other activities related to reference and research advisory services.
+
+•	Leads, develops, and promotes GIS services and resources to meet curricular and research needs on campus
+•	Provides specialized GIS assistance and general reference service at the Research Assistance Desk in person and with virtual users
+•	Collaborates with librarians, library staff, and campus communities to provide specialized GIS instructional services
+•	Partners with subject librarians for liaison and outreach to academic departments and programs on campus
+•	Selects and manages geospatial data, materials and software in all applicable formats
+•	Collaborates with Library programs to develop and implement strategies to support the acquisition, management, curation and preservation of GIS Data
+•	Collaboratively manages the daily operations of the Library’s Data & GIS Lab
+Required Qualification
+•	Professional degree from a library school or other advanced degree, or equivalent experience in  one or more fields relevant to library science, and a concentration or advanced coursework in GIS
+•	Proficient with GIS software including ESRI ArcGIS
+•	Experience working with geospatial data, metadata standards, formats, and analytic software
+•	Ability to effectively teach the use of GIS to students and faculty in the academic environment
+•	Ability to develop effective relationships between the Library and other campus units
+•	Superior organizational, analytical and communication skills
+•	Strong commitment to excellence in service and ability to work both independently and collaboratively
+•	Strong commitment to diversity, equity and inclusion in higher education
+
+**Desired Qualifications** 
+
+•	Experience with a programming language, such as Python or R
+•	Experience with open-source and web-based GIS tools (OpenLayers, Leaflet, Open GeoPortal, Harvard WorldMap, QGIS, ArcGIS Online, etc.)
+•	Experience with data visualization tools, software and concepts related to geospatial information
+•	Experience providing reference service in an academic or research library
+
+Librarians at UC San Diego are academic appointees and entitled to appropriate professional leave and all other perquisites granted to non-faculty academic personnel. UC San Diego Librarians are expected to participate in library-wide and system-wide planning and governance and to be professionally active. Appreciation of, a sensitivity to, and respect for a rich and diverse academic environment, inclusive of students, faculty, and staff of varying social, economic, cultural, ideological and ethnic backgrounds, and those with disabilities.
+
+•	Salary: Salary and level of appointment in the Librarian series commensurate with qualifications and experience and based on the University of California pay scales.
+
+•	Closing Date: Application consideration begins February 29, 2016.
+
+•	To Apply: For full consideration, please submit applications to: 
+
+https://apol-recruit.ucsd.edu/apply/JPF01018
+
+Please provide the following:
+•	A short application letter addressing your interest in this position and applicable qualifications
+•	A resume of education and relevant experience
+•	The names of at least three persons who are knowledgeable about your qualifications and/or suitability for this position
+•	A personal statement summarizing your past or planned contributions to diversity; guidance for preparing diversity statements can be found at:
+
+http://facultyequity.ucsd.edu/Faculty-Applicant-C2D-Info.asp
+
+AA-EOE: UCSD is an Affirmative Action/Equal Opportunity Employer with a strong institutional commitment to excellence through diversity.
