@@ -36,11 +36,11 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
 -->
 {% if page.eventbrite %}
 <iframe
-  src="https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt"
-  frameborder="0"
-  width="100%"
-  height="248px"
-  scrolling="auto">
+src="https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt"
+frameborder="0"
+width="100%"
+height="248px"
+scrolling="auto">
 </iframe>
 {% endif %}
 
@@ -68,7 +68,7 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   The course is aimed at GPS graduate students.
   <strong>You don't need to have any previous knowledge of the tools that will
     be presented at the workshop.</strong>
-</p>
+  </p>
 
 <!--
   LOCATION
@@ -111,40 +111,40 @@ eventbrite:       # optional (insert the alphanumeric key for Eventbrite registr
   <strong>Contact</strong>:
   Please mail
   {% if page.contact %}
-    <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
+  <a href='mailto:{{page.contact}}'>{{page.contact}}</a>
   {% else %}
-    <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
+  <a href='mailto:{{site.contact}}'>{{site.contact}}</a>
   {% endif %}
   for more information.
 </p>
 
 <p id="certificate">
-<strong>Assessment</strong>:
-A certificate of proficiency will be given to students who: 
+  <strong>Assessment</strong>:
+  A certificate of proficiency will be given to students who: 
 </p>
 
 <ul>
-<li>Attends all classes</li>
-<li>Passes all in-course quizzes</li>
-<li>Satisfactorily completes the weekly assignments</li>
+  <li>Attends all classes</li>
+  <li>Passes all in-course quizzes</li>
+  <li>Satisfactorily completes the weekly assignments</li>
 </ul>
 
 
 <p id = "data">
-<strong>Data:</strong>
-<ul>
-<li>Download the <a href="http://swcarpentry.github.io/shell-novice/shell-novice-data.zip">shell-novice-files.zip </a> and move the file to your <strong>Desktop</strong>.</li>
-<li>Double-click on the zip file to unzip it. You should end up with a new folder called <strong>data-shell</strong>.</li>
-</ul>
+  <strong>Data:</strong>
+  <ul>
+    <li>Download the <a href="http://swcarpentry.github.io/shell-novice/shell-novice-data.zip">shell-novice-files.zip </a> and move the file to your <strong>Desktop</strong>.</li>
+    <li>Double-click on the zip file to unzip it. You should end up with a new folder called <strong>data-shell</strong>.</li>
+  </ul>
 
 </p>
 
 
 <p id="help">
-{% if site.lib_appt %}
+  {% if site.lib_appt %}
   <strong>Need help?</strong>:  Email <a href='mailto:{{page.contact}}'>{{page.contact}}</a> or 
   <a href="{{site.lib_appt}}">schedule an appointment</a>
-{% endif %}
+  {% endif %}
 </p>
 <hr/>
 <!--
@@ -203,7 +203,7 @@ A certificate of proficiency will be given to students who:
 <h2 id="syllabus">Syllabus</h2>
 
 <div class="row">
-  
+
   <div class="col-md-6">
 
 
@@ -236,7 +236,7 @@ A certificate of proficiency will be given to students who:
       <li><a href="{{site.swc_githubio}}/python-novice-inflammation/reference.html">Reference...</a></li>
     </ul>
   </div>
-  -->
+-->
   <!--
   <div class="col-md-6">
     <h3 id="syllabus-r">Programming in R</h3>
@@ -268,21 +268,21 @@ A certificate of proficiency will be given to students who:
       <li><a href="{{site.swc_githubio}}/git-novice/reference.html">Reference...</a></li>
     </ul>
   </div>
-  -->
-  <div class="col-md-6">
-    <h3 id="syllabus-sql">Managing Data with SQL</h3>
-    <ul>
-      <li>Reading and sorting data</li>
-      <li>Filtering with <code>where</code></li>
-      <li>Calculating new values on the fly</li>
-      <li>Handling missing values</li>
-      <li>Combining values using aggregation</li>
-      <li>Combining information from multiple tables using <code>join</code></li>
-      <li>Creating, modifying, and deleting data</li>
-      <li>Programming with databases</li>
-      <li><a href="{{site.swc_githubio}}/sql-novice-survey/reference.html">Reference...</a></li>
-    </ul>
-  </div>
+-->
+<div class="col-md-6">
+  <h3 id="syllabus-sql">Managing Data with SQL</h3>
+  <ul>
+    <li>Reading and sorting data</li>
+    <li>Filtering with <code>where</code></li>
+    <li>Calculating new values on the fly</li>
+    <li>Handling missing values</li>
+    <li>Combining values using aggregation</li>
+    <li>Combining information from multiple tables using <code>join</code></li>
+    <li>Creating, modifying, and deleting data</li>
+    <li>Programming with databases</li>
+    <li><a href="{{site.swc_githubio}}/sql-novice-survey/reference.html">Reference...</a></li>
+  </ul>
+</div>
 </div>
 <hr/>
 
@@ -336,8 +336,8 @@ A certificate of proficiency will be given to students who:
               <strong>
                 Select "Use Git from the Windows Command Prompt" and click on "Next".
               </strong>
-                If you forgot to do this programs that you need for the workshop will not work properly.
-                If this happens rerun the installer and select the appropriate option.
+              If you forgot to do this programs that you need for the workshop will not work properly.
+              If this happens rerun the installer and select the appropriate option.
             </li>
             <!-- Configuring the line ending conversions -->
             <li>
@@ -421,44 +421,40 @@ A certificate of proficiency will be given to students who:
 -->
 </div> <!-- End of 'SQLite' section. -->
 <div class="row">
-<div class="col-md-4">
-<ol>
-<li><b>A spreadsheet program</b></li>
-<br>For this workshop you will need a spreadsheet program. Many people already have 
-Microsoft Excel installed, and if you do, you're set! </li>
-<br>
-If you need a spreadsheet 
-program, there are a few other options, like OpenOffice and LibreOffice. Install 
-instructions for LibreOffice, which is free and open source, are here.
-       <ul>
-          <li><b>Download the Installer</b>
-        <br>Install LibreOffice by going to the <a href=https://www.libreoffice.org/download/libreoffice-fresh/>installation page</a>. The Operating System of your machine 
-should automatically be selected. Click <b>Download Version 4.4.2</b>. You 
-will go to a page that asks about a donation, but you don't need to make one.
-Your download should begin automatically. 
+      <h3>A spreadsheet program</h3>
+      <br>For this workshop you will need a spreadsheet program. Many people already have 
+      Microsoft Excel installed, and if you do, you're set! </li>
+      <br>
+      If you need a spreadsheet 
+      program, there are a few other options, like OpenOffice and LibreOffice. Install 
+      instructions for LibreOffice, which is free and open source, are here.
+      <ul>
+        <li><b>Download the Installer</b>
+          <br>Install LibreOffice by going to the <a href=https://www.libreoffice.org/download/libreoffice-fresh/>installation page</a>. The Operating System of your machine 
+          should automatically be selected. Click <b>Download Version 4.4.2</b>. You 
+          will go to a page that asks about a donation, but you don't need to make one.
+          Your download should begin automatically. 
           <li><b>Install LibreOffice</b>
             <br>Once the installer is downloaded, double click on it and it should install.
-<li>To use LibreOffice, double click on the icon and it will open.</li>
-</ul>
-</div>
-<div class="col-md-4">
-<li><b>OpenRefine</b>
-<br>OpenRefine (previously Google Refine) is a tool for data cleaning 
-that runs through a web browser, and any browser -
-Safari, Firefox, Chrome, Explorer - should work fine. 
-You will need to download Google Refine and install it, 
-and when you open it, it will run through the browser, but you don't need
-an internet connection, and the data will all be stored on your computer.
-<ul>
-<li>Go to the OpenRefine <a href="http://openrefine.org/download.html">download 
-page</a> </li>
-<li>Click on <i>Windows kit</i> to download the install file</li>
-<li>To use it, unzip, and double-click on google-refine.exe (if you're having issues
-with google-refine.exe try refine.bat instead)</li>
-<li>Google Refine will then open in your web browser.</li>
-<li>If it doesn't open automatically, open a web broswer after you've started the program and go to the URL <code>http://localhost:3333</code> and you should see OpenRefine.</li>
-</ul>
-</div>
+            <li>To use LibreOffice, double click on the icon and it will open.</li>
+          </ul>
+
+          <h3>OpenRefine</b>
+            <br>OpenRefine (previously Google Refine) is a tool for data cleaning 
+            that runs through a web browser, and any browser -
+            Safari, Firefox, Chrome, Explorer - should work fine. 
+            You will need to download Google Refine and install it, 
+            and when you open it, it will run through the browser, but you don't need
+            an internet connection, and the data will all be stored on your computer.
+            <ul>
+              <li>Go to the OpenRefine <a href="http://openrefine.org/download.html">download 
+                page</a> </li>
+                <li>Click on <i>Windows kit</i> to download the install file</li>
+                <li>To use it, unzip, and double-click on google-refine.exe (if you're having issues
+                  with google-refine.exe try refine.bat instead)</li>
+                  <li>Google Refine will then open in your web browser.</li>
+                  <li>If it doesn't open automatically, open a web broswer after you've started the program and go to the URL <code>http://localhost:3333</code> and you should see OpenRefine.</li>
+                </ul>
 </div>
 <!--
   Uncomment this section if you are using our virtual machine.
