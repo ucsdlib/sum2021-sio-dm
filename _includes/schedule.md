@@ -16,6 +16,7 @@ NOTE: Because Monday (February 15th) falls on President's Day, we will meet on W
 |           |                                 |                                                           | 
 +-----------+---------------------------------+-----------------------------------------------------------+
 | Feb. 24   | Data Preparation                | - Data Cleaning in OpenRefine                             |
+|           |                                 | - Hands-on exercies & assignment                          | 
 +-----------+---------------------------------+-----------------------------------------------------------+
 | Feb. 29   | Databases and SQL               | - Selecting, sorting, and filtering data                  |
 |           |                                 | - Calculating new values                                  |
@@ -23,5 +24,5 @@ NOTE: Because Monday (February 15th) falls on President's Day, we will meet on W
 +-----------+---------------------------------+-----------------------------------------------------------+
 | Mar. 2    | Databases and SQL               | - Combining, creating & modifying data                    |
 |           |                                 | - Programming with databases                              |
-|           |                                 |                                                           |
+|           |                                 | - Hands-on exercies & assignment                          |
 +-----------+---------------------------------+-----------------------------------------------------------+
