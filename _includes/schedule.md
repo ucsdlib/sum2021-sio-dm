@@ -11,11 +11,11 @@ NOTE: Because Monday (February 15th) falls on President's Day, we will meet on W
 | Feb. 19   |Intro to Data Management P2      | - Unix Shell continued                                    |
 |           |                                 | - Hands-on exerciese & assignment                         |
 +-----------+---------------------------------+-----------------------------------------------------------+
-| Feb 22.   | Cleaning Data                   | - Organizing data in spreadsheets                         |
+| Feb 22.   | Data Preparation                | - Organizing data in spreadsheets                         |
 |           |                                 | - Hands-on exercises                                      |
-|           |                                 | -                                                         | 
+|           |                                 |                                                           | 
 +-----------+---------------------------------+-----------------------------------------------------------+
-| Feb. 24   | Cleaning Data                   | - OpenRefine                                              |
+| Feb. 24   | Data Preparation                | - Data Cleaning in OpenRefine                             |
 +-----------+---------------------------------+-----------------------------------------------------------+
 | Feb. 29   | Databases and SQL               | - Selecting, sorting, and filtering data                  |
 |           |                                 | - Calculating new values                                  |
