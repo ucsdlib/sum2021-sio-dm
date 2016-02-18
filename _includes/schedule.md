@@ -7,7 +7,7 @@ NOTE: Because Monday (February 15th) falls on President's Day, we will meet on W
 | Feb. 17   |Intro to Data Management P1      | - Data Management Defined                                 | 
 |           |                                 | - Best Practices                                          |
 |           |                                 | - [TIER Protocol](https://goo.gl/M3HeT7)                  |
-|           |                                 | - Intro to Unix Shell[1](http://goo.gl/cwNBsD) [2](http://goo.gl/FxkPrb) |
+|           |                                 | - Intro to Unix Shell ([1](http://goo.gl/cwNBsD), [2](http://goo.gl/FxkPrb))|
 +-----------+---------------------------------+-----------------------------------------------------------+
 | Feb. 19   |Intro to Data Management P2      | - [Pipes & Filters](http://goo.gl/1d1owz)                  |
 |           |                                 | - Hands-on exerciese & assignment                         |
