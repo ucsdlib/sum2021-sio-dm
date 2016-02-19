@@ -184,7 +184,7 @@ div#notebook {
 <strong>Where to turn in:</strong> Email it as an attachment to challenges.gps.programming.ta@gmail.com<br>
 <strong>TL;DR Instructions:</strong></p>
 <ol>
-<li>Download the zipped up folder that needs to be organized from: <a href="https://goo.gl/J9b7iP">https://goo.gl/J9b7iP</a>  </li>
+<li>Download the zipped up folder that needs to be organized from: <a href="http://ucsdlib.github.io/win2016-gps-dm101/assignment1-dm101-gps.zip">http://ucsdlib.github.io/win2016-gps-dm101/assignment1-dm101-gps.zip</a>   </li>
 <li>Unzip on your desktop </li>
 <li>Rename the yourID.sh file in the folder to included your student Id, so a12345678.sh  </li>
 <li>Edit the file and write bash commands to create the "Processing and Analysis" folder and its sub-folders</li>
@@ -219,8 +219,8 @@ div#notebook {
 <ul>
 <li>To create a directory with spaces use quotes:  <code>$ mkdir 'This Directory Has Spaces'</code></li>
 <li>Look for patterns in your data and use the wildcard ("*") to copy multiple files at once</li>
-<li>Use <code>cp</code> instead of <code>mv</code>, so you don't have to undo your works if you get the script wrong</li>
-<li>Run your script more than once and make sure it works:  bash a12345678.sh (remember you can rm -r "pro</li>
+<li>Use <code>cp</code> instead of <code>mv</code>, so you don't have to undo your work if you get the script wrong</li>
+<li>Run your script more than once and make sure it works:  bash a12345678.sh (remember you can rm -r "Processing and Analysis" after you run your script to start anew)</li>
 </ul>
 <p>Fuller instructions follow:</p>
 
@@ -251,10 +251,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre>mv yourID.sh a12345678.sh
+<div class=" highlight hl-bash"><pre>ls *.sh
+mv yourID.sh a12345678.sh
 ls *.sh
 </pre></div>
 
@@ -268,7 +269,8 @@ ls *.sh
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>a12345678.sh
+<pre>yourID.sh
+a12345678.sh
 </pre>
 </div>
 </div>
@@ -298,7 +300,7 @@ ls *.sh
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-bash"><pre>tree <span class="s2">&quot;Processing and Analysis&quot;</span>
@@ -378,11 +380,140 @@ ls *.sh
 </li>
 <li>read_me.pdf</li>
 </ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>TIPs</strong></p>
 <ul>
 <li>To create a directory with spaces you can use quotes:  <code>mkdir "This Directory Has Spaces"</code></li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre>mkdir <span class="s2">&quot;This Directory Has Spaces&quot;</span>
+ls -F
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Processing and Analysis/	merged.dta
+This Directory Has Spaces/	read_me.pdf*
+a12345678.sh			regressions.do*
+dataagg2.dta*			rose_import.dta
+dm101-assignment1-gps.ipynb	wdi_download.txt*
+figures.do*			wdi_download.xlsx*
+import.do*			wdi_import.dta
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>Look for patterns in your data and use the wildcard ("*") to copy multiple files at once</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre>ls *.do
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>figures.do	import.do	regressions.do
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>Use cp instead of mv, so you don't have to undo your works if you get the script wrong</li>
+</ul>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre>cp read_me.pdf <span class="s2">&quot;Processing and Analysis&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre></pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li>Run your script more than once and make sure it works:  <code>$ bash a12345678.sh</code> (remember you can rm -r "Processing and Analysis" after you run your script to start anew)</li>
 </ul>
 
