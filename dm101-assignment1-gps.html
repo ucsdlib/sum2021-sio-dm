@@ -343,7 +343,7 @@ ls *.sh
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><code>tree</code> is a bash command that prints out the heirarchy of a directory, but it doesn't come with bash by default on Git for Winows or Mac. We are only using it here to show how the files are organized on the instructor's machine. We also create a bulleted heirarchy below.  Note that bash prints a backslash "\" when there are spaces in a filename or directory. The backslash is a symbol to tell unix to join the spaces into one filename. It's a legacy of unix's past because spaces in filenames or directories were discouraged.</p>
+<p><code>tree</code> is a bash command that prints out the heirarchy of a directory, but it doesn't come with bash by default on Git for Winows or Mac. We are only using it here to show how the files are organized on the instructor's machine. We also create a bulleted heirarchy below.  Note that bash prints a backslash "\" when there are spaces in a filename or directory. The backslash is a symbol to tell unix to treat the spaces as part of the filename. Otherwise, some commands might interpret each word as a separate filename. This is really a legacy of unix's past because spaces in filenames or directories were discouraged historically.</p>
 
 </div>
 </div>
@@ -360,8 +360,6 @@ ls *.sh
 <li>merged.dta</li>
 </ul>
 </li>
-</ul>
-</li>
 <li>Command Files<ul>
 <li>figures.do</li>
 <li>import.do</li>
@@ -374,6 +372,8 @@ ls *.sh
 <li>wdi_download.txt</li>
 <li>wdi_download.xlsx</li>
 <li>wdi_import.dta</li>
+</ul>
+</li>
 </ul>
 </li>
 <li>read_me.pdf</li>
