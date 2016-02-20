@@ -17,7 +17,8 @@ NOTE: Because Monday (February 15th) falls on President's Day, we will meet on W
 |           |                                 | - Hands-on exercises                                      |
 |           |                                 |                                                           | 
 +-----------+---------------------------------+-----------------------------------------------------------+
-| Feb. 24   | Data Preparation                | - Data Cleaning in OpenRefine                             |
+| Feb. 24   | Data Preparation                | - [Data Cleaning in OpenRefine](http://www.datacarpentry.org/OpenRefine-ecology/)    |
+|           |                                 | - [Data](http://enipedia.tudelft.nl/enipedia/images/f/ff/UniversityData.zip)    | 
 |           |                                 | - Hands-on exercises & assignment                         | 
 +-----------+---------------------------------+-----------------------------------------------------------+
 | Feb. 29   | Databases and SQL               | - Selecting, sorting, and filtering data                  |
