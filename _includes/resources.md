@@ -1,6 +1,4 @@
-### Data Management Resources
-
-#### Best Practices 
+#### Data Management Best Practices 
 
 * [TIER Protocol](https://www.haverford.edu/tier) - A defined protocol for structuring and managing code, data and output of your resercher 
 * [RDCP](http://libraries.ucsd.edu/services/data-curation/data-management/index.html) - Library unit who can help you with your research data needs
