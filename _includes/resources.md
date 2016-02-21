@@ -1,4 +1,4 @@
-### Data Management Reosources
+### Data Management Resources
 
 #### Best Practices 
 
