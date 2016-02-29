@@ -22,8 +22,9 @@ NOTE: Because Monday (February 15th) falls on President's Day, we will meet on W
 |           | - Juliane Schneider             | - Hands-on exercises & assignment                         | 
 +-----------+---------------------------------+-----------------------------------------------------------+
 | Feb. 29   | Databases and SQL               | - [Selecting](http://goo.gl/tVvFoA), [sorting](http://goo.gl/Ita7SO) and [filtering](http://goo.gl/cmgQVA)    |
-|           |                                 | - Calculating new values                                  |
-|           | - Tim Dennis                    | - Aggregation                                             |
+|           |                                 | - [Calculating new values](http://goo.gl/fC5pcZ) &  [Missing values](http://goo.gl/dfbaCJ)      |
+|           |                                 | - [Aggregation](http://goo.gl/QHmEpp)                     |
+|           | - Tim Dennis                    | - Notes: [Selecting, Sorting & Filtering](http://goo.gl/2iaB2c)     |
 +-----------+---------------------------------+-----------------------------------------------------------+
 | Mar. 2    | Databases and SQL               | - Combining, creating & modifying data                    |
 |           |                                 | - Programming with databases                              |
