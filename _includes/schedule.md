@@ -21,7 +21,7 @@ NOTE: Because Monday (February 15th) falls on President's Day, we will meet on W
 |           |                                 | - [Data](http://enipedia.tudelft.nl/enipedia/images/f/ff/UniversityData.zip)    | 
 |           | - Juliane Schneider             | - Hands-on exercises & assignment                         | 
 +-----------+---------------------------------+-----------------------------------------------------------+
-| Feb. 29   | Databases and SQL               | - Selecting, sorting, and filtering data                  |
+| Feb. 29   | Databases and SQL               | - [Selecting](http://goo.gl/tVvFoA), [sorting](http://goo.gl/Ita7SO) and [filtering](http://goo.gl/cmgQVA)    |
 |           |                                 | - Calculating new values                                  |
 |           | - Tim Dennis                    | - Aggregation                                             |
 +-----------+---------------------------------+-----------------------------------------------------------+

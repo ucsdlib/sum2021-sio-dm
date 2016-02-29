@@ -1,0 +1,366 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+  </style>
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.css" type="text/css" />
+  <link rel="stylesheet" href="css/swc.css" type="text/css" />
+</head>
+<body>
+<blockquote>
+<h2 id="learning-objectives" class="objectives">Learning Objectives</h2>
+<ul>
+<li>Explain the difference between a table, a record, and a field.</li>
+<li>Explain the difference between a database and a database manager.</li>
+<li>Write a query to select all values for specific fields from a single table.</li>
+</ul>
+</blockquote>
+<ul>
+<li>Relational database is a way to store and manipulate information</li>
+<li>Arranged in tables</li>
+<li>They have columns (fileds) that describe data &amp; rows (records) that contain data</li>
+<li>we send queries to a db manager -- a program that manipulates the database</li>
+<li>dbmanager does lookups and calcs</li>
+<li>queries are written in SQL (structured query language)</li>
+</ul>
+<h3 id="running-sqlite">Running sqlite</h3>
+<blockquote>
+<p>$ cd /path/to/survey/data $ sqlite3 survey.db</p>
+</blockquote>
+<ul>
+<li>sqlite command <code>sqlite3</code> opens the database <code>survey.db</code></li>
+<li>to exit sqlite use <code>.exit</code> or <code>.quit</code> - <code>Ctr-D</code> can work in some contexts</li>
+<li>use <code>.help</code> for other <code>.</code> commands</li>
+</ul>
+<h3 id="inspect-the-database">Inspect the database</h3>
+<ul>
+<li>let's set some options first</li>
+<li><code>.mode</code> selects output mode (csv,ascii, html, etc.)</li>
+<li><code>.header</code> on or off will show feild names</li>
+</ul>
+<blockquote>
+<pre class="sqlite"><code>.tables</code></pre>
+</blockquote>
+<blockquote>
+<pre class="sqlite"><code>.mode column
+.header on</code></pre>
+</blockquote>
+<ul>
+<li>sql query that displays scientists' names</li>
+<li><code>SELECT</code> command to get columns</li>
+<li><code>FROM</code> the table</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> family, personal <span class="kw">FROM</span> Person;</code></pre></div>
+<ul>
+<li><code>;</code> at end tells database manager the query is finished</li>
+<li>note SQL is case insensitive - meaning we can do this:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SeLeCt</span> FaMiLy, PeRsoNaL <span class="kw">FrOm</span> PeRsOn;</code></pre></div>
+<ul>
+<li>you can use this to your advantage for readability</li>
+<li>I'll be using the convention of commands in ALLCAPS to distinguish from tables and columns</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Person
+...&gt;
+...&gt;</code></pre></div>
+<ul>
+<li>what happens if you don't conclude the statement with a <code>;</code></li>
+<li>sqlite prompt waiting for additional commands or for a closing <code>;</code></li>
+<li>just type <code>;</code>'</li>
+<li>IMPORTANT to understand that the rows and columns in a database aren't actually in any particular order</li>
+<li>we can control the output that in various ways</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> personal, family <span class="kw">FROM</span> Person;</code></pre></div>
+<ul>
+<li>we could swap columns in the output from our first query</li>
+<li>or repeat columns like below:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> ident, ident, ident <span class="kw">FROM</span> Person;</code></pre></div>
+<ul>
+<li>as a shortcut we can select all columns in a table using <code>*</code>:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Person;</code></pre></div>
+<blockquote>
+<h3 id="challenge">Challenge</h3>
+<p>Write a query that selects only site names from the <code>Site</code> table.</p>
+</blockquote>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> name <span class="kw">FROM</span> Site;</code></pre></div>
+<blockquote>
+<h2 id="query-style" class="challenge">Query Style</h2>
+<p>Many people format queries as:</p>
+<pre><code>SELECT personal, family FROM person;</code></pre>
+<p>or as:</p>
+<pre><code>select Personal, Family from PERSON;</code></pre>
+<p>What style do you find easiest to read, and why?</p>
+</blockquote>
+<h3 id="sorting-and-removing-duplicates">Sorting and Removing Duplicates</h3>
+<ul>
+<li>Write queries that display results in a particular order</li>
+<li>Write queries that eliminate duplicate values from data</li>
+</ul>
+<p>In beginning our examination of the Antarctic data, we want to know:</p>
+<ul>
+<li>what kind of quantity measurements were taken at each site;</li>
+<li>which scientists took measurements on the expedition;</li>
+<li><p>the sites where each scientist took measurements</p></li>
+<li>let's look at the <code>Survey</code> table</li>
+<li>data can be redundant, so queries return redundant information</li>
+<li><p>EX:</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> quant <span class="kw">FROM</span> Survey;</code></pre></div>
+<ul>
+<li>the results make it difficult to see the diff types of <code>quant</code> in Survey</li>
+<li>let's use <code>DISTINCT</code> to eliminate redundant output</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> quant <span class="kw">FROM</span> Survey;</code></pre></div>
+<ul>
+<li>if we want to see what sites have what <code>quant</code> measures, we can use DISTINCT command on multiple columns</li>
+<li>distinct pairs are returned</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> taken, quant <span class="kw">FROM</span> Survey;</code></pre></div>
+<ul>
+<li>notice that duplicates are removed even if the rows aren't ajacent in the db tables</li>
+</ul>
+<p><strong>Sorting</strong></p>
+<ul>
+<li>identify scientists on the expedition by looking in Person</li>
+<li>records aren't stored in a particular order, not sorted</li>
+<li>even if they were we might want to sort in diff way</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Person <span class="kw">ORDER</span> <span class="kw">BY</span> ident;</code></pre></div>
+<ul>
+<li>by default results are ascending order</li>
+<li>use DESC to change</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Person <span class="kw">ORDER</span> <span class="kw">BY</span> ident <span class="kw">DESC</span>;</code></pre></div>
+<ul>
+<li>look at which scientist measured quantities at each site, survey table</li>
+<li>we can sort several fields at once</li>
+<li>sort by taken, then desc by person within each group of equal taken vals</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> taken, person, quant <span class="kw">FROM</span> Survey <span class="kw">ORDER</span> <span class="kw">BY</span> taken <span class="kw">ASC</span>, person <span class="kw">DESC</span>;</code></pre></div>
+<ul>
+<li>gives us a good idea of which scientist was at which site and their measurements</li>
+<li>looking at results, seems like some scientists specialized in certain quant</li>
+<li>examine which scientists by selecting the appropriate columns and removing dups</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> quant, person <span class="kw">FROM</span> Survey <span class="kw">ORDER</span> <span class="kw">BY</span> quant <span class="kw">ASC</span>;</code></pre></div>
+<p>stinct Dates {.challenge} &gt; &gt; Write a query that selects distinct dates from the <code>Visited</code> table.</p>
+<blockquote>
+<h2 id="displaying-full-names" class="challenge">Displaying Full Names</h2>
+<p>Write a query that displays the full names of the scientists in the <code>Person</code> table, ordered by family name.</p>
+</blockquote>
+<p><strong>Filtering</strong></p>
+<ul>
+<li>Write queries that select records that satisfy user-specified conditions</li>
+<li><p>Explain the oder in which the clauses in a query are executed</p></li>
+<li>filter to select only records that match certain criteria</li>
+<li>see when a particular site was visited</li>
+<li><p>use WHERE clause to select records from <code>Visited</code> table</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Visited <span class="kw">WHERE</span> site=<span class="st">&#39;DR-1&#39;</span>;</code></pre></div>
+<p>DB manager executes in 2 stages:</p>
+<ol style="list-style-type: decimal">
+<li>checks at each row in <code>Visited</code> table to see what satisfies the <code>WHERE</code></li>
+<li>then uses the column names in <code>SELECT</code> to determine what to display</li>
+</ol>
+<p>This means we can filter records using <code>WHERE</code> based on values that won't be displayed.</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> ident <span class="kw">FROM</span> Visited <span class="kw">WHERE</span> site=<span class="st">&#39;DR-1&#39;</span>;</code></pre></div>
+<p><img src="fig/sql-filter.svg" alt="SQL Filtering in Action" /></p>
+<ul>
+<li>we can use Boolean operators to filter data</li>
+<li>e.g. all information from DR-1 collected prior to 1930:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Visited <span class="kw">WHERE</span> site=<span class="st">&#39;DR-1&#39;</span> <span class="kw">AND</span> dated&lt;<span class="st">&#39;1930-01-01&#39;</span>;</code></pre></div>
+<p><strong>Date Types</strong></p>
+<ul>
+<li>most DB managers have special data for date types</li>
+<li>most have 2: one for dates &quot;May 31, 1971&quot; &amp; durations '31 days'</li>
+<li>SQLITE doesn't - it stores dates as text ISO-8601 format</li>
+<li>the number of seconds since Nov. 24, 4714 BCE</li>
+<li>or integers - num seconds since Jan. 1, 1970</li>
+<li><p>complicated but dates are inherently complicated</p></li>
+<li>find out what measures are taken by lake or Roerich</li>
+<li><p>use OR</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Survey <span class="kw">WHERE</span> person=<span class="st">&#39;lake&#39;</span> <span class="kw">OR</span> person=<span class="st">&#39;roe&#39;</span>;</code></pre></div>
+<ul>
+<li>we can also use <code>IN ('lake', 'roe');</code></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Survey <span class="kw">WHERE</span> person <span class="kw">IN</span> (<span class="st">&#39;lake&#39;</span>, <span class="st">&#39;roe&#39;</span>);</code></pre></div>
+<ul>
+<li>we can combine <code>AND</code> or <code>OR</code>, but need to be careful of order or operations</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Survey <span class="kw">WHERE</span> quant=<span class="st">&#39;sal&#39;</span> <span class="kw">AND</span> person=<span class="st">&#39;lake&#39;</span> <span class="kw">OR</span> person=<span class="st">&#39;roe&#39;</span>;</code></pre></div>
+<ul>
+<li>above is salinity measurements by lake, and any measurement by Roerich</li>
+<li>instead:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Survey <span class="kw">WHERE</span> quant=<span class="st">&#39;sal&#39;</span> <span class="kw">AND</span> (person=<span class="st">&#39;lake&#39;</span> <span class="kw">or</span> person=<span class="st">&#39;roe);</span></code></pre></div>
+<ul>
+<li>partial match filters</li>
+<li>sites that begin with &quot;DR&quot; use <code>LIKE</code></li>
+<li><code>%</code> acts as wildcard</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Visited <span class="kw">WHERE</span> site <span class="kw">LIKE</span> <span class="st">&#39;DR%&#39;</span>;</code></pre></div>
+<ul>
+<li>finally use <code>DISTINCT</code> with <code>WHERE</code> to give second level filtering</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> <span class="kw">DISTINCT</span> person, quant <span class="kw">FROM</span> Survey <span class="kw">WHERE</span> person=<span class="st">&#39;lake&#39;</span> <span class="kw">OR</span> person=<span class="st">&#39;roe&#39;</span>;</code></pre></div>
+<ul>
+<li>remember <code>DISTINCT</code> is applied to values in the chosen columns, not to the entire rows as they are being processed</li>
+<li>above example of growing SQL queries, start something simple and add more clauses one by one</li>
+<li>good strategy for complex queries</li>
+<li>quick turnaround - get subset of data in temp dataset, pull out sample dbs for working out queries</li>
+</ul>
+<blockquote>
+<h2 id="fix-this-query" class="challenge">Fix This Query</h2>
+<p>Suppose we want to select all sites that lie more than 30 degrees from the poles. Our first query is:</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Site <span class="kw">WHERE</span> (lat &gt; -<span class="dv">60</span>) <span class="kw">OR</span> (lat &lt; <span class="dv">60</span>);</code></pre></div>
+<p>Explain why this is wrong, and rewrite the query so that it is correct.</p>
+</blockquote>
+<blockquote>
+<h2 id="finding-outliers" class="challenge">Finding Outliers</h2>
+<p>Normalized salinity readings are supposed to be between 0.0 and 1.0. Write a query that selects all records from <code>Survey</code> with salinity values outside this range.</p>
+</blockquote>
+<blockquote>
+<h2 id="matching-patterns" class="challenge">Matching Patterns</h2>
+<p>Which of these expressions are true?</p>
+<ul>
+<li><code>'a' LIKE 'a'</code></li>
+<li><code>'a' LIKE '%a'</code></li>
+<li><code>'beta' LIKE '%a'</code></li>
+<li><code>'alpha' LIKE 'a%%'</code></li>
+<li><code>'alpha' LIKE 'a%p%'</code></li>
+</ul>
+</blockquote>
+<h3 id="calculations">Calculations</h3>
+<ul>
+<li>say we want to correct a measure - for instance the raditaion measure -- upwards</li>
+<li>we can perform calc on fly</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> <span class="fl">1.05</span> * reading <span class="kw">FROM</span> Survey <span class="kw">WHERE</span> quant=<span class="st">&#39;rad&#39;</span>;</code></pre></div>
+<ul>
+<li>works for other arithmetic operators and functions</li>
+<li>let's convert temperature readings from Fahrenheit to Celsius</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> taken, <span class="fu">round</span>(<span class="dv">5</span>*(reading<span class="dv">-32</span>)/<span class="dv">9</span>, <span class="dv">2</span>) <span class="kw">FROM</span> Survey <span class="kw">WHERE</span> quant=<span class="st">&#39;temp&#39;</span>;</code></pre></div>
+<ul>
+<li>we can also combine values from different fields, using string concatenation operator <code>||</code>:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> personal || <span class="st">&#39; &#39;</span> || family <span class="kw">FROM</span> Person;</code></pre></div>
+<p><strong>Null</strong></p>
+<ul>
+<li>how dbs represent missing values</li>
+<li>3 valued logica databases use when manipulating missing information</li>
+<li><p>write queries that handle missing info correctly</p></li>
+<li>real data is nver complete</li>
+<li>Databases represent missing data by using a special value called <code>null</code></li>
+<li><code>null</code> isn't:</li>
+<li>zero</li>
+<li><code>False</code></li>
+<li>or empty string</li>
+<li>Null is a one-of-a-kind value that means &quot;nothing here&quot;</li>
+<li><p>let's deal with some nulls!</p></li>
+<li><p>check out the visited table</p></li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Visited;</code></pre></div>
+<ul>
+<li><h1 id="has-null-for-dated">752 has null for dated</h1></li>
+<li>null doesn't behave like other values:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Visited <span class="kw">WHERE</span> dated&lt;<span class="st">&#39;1930-01-01&#39;</span>;</code></pre></div>
+<ul>
+<li>two results</li>
+<li>now let's select the ones that come after 1930:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Visited <span class="kw">WHERE</span> dated&gt;=<span class="st">&#39;1930-01-01&#39;</span>;</code></pre></div>
+<ul>
+<li>we get five and record #752 isn't in the results</li>
+<li>this is b/c <code>null&lt;'1930-01-01'</code> is neither True or False</li>
+<li>null means &quot;we don't know&quot;</li>
+<li>`null&gt;='1930-01-01' also null</li>
+<li>evaluates to null so not in results</li>
+</ul>
+<p>Comparisons aren't the only operations like this.</p>
+<p><code>1+null</code> is <code>null</code> <code>5*null</code> is <code>null</code> <code>log(null)</code> is <code>null</code></p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Visited <span class="kw">WHERE</span> dated=NULL;</code></pre></div>
+<ul>
+<li>produces no results, comparing things to null produces null</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Visited <span class="kw">WHERE</span> dated!=NULL;</code></pre></div>
+<ul>
+<li>to check whether a value is <code>null</code> or not we use <code>IS NULL</code>:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Visited <span class="kw">WHERE</span> dated <span class="kw">IS</span> <span class="kw">NULL</span>;</code></pre></div>
+<ul>
+<li>or inverse</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Visited <span class="kw">WHERE</span> dated <span class="kw">IS</span> <span class="kw">NOT</span> NULL:</code></pre></div>
+<ul>
+<li>null values can be a pain</li>
+<li>example: find all the salinity measures that weren't taken by Lake.</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Survey <span class="kw">WHERE</span> quant=<span class="st">&#39;sal&#39;</span> <span class="kw">AND</span> person!=<span class="st">&#39;lake&#39;</span>;</code></pre></div>
+<ul>
+<li>omits records where we don't know who took the measure (are <code>NULL</code>)</li>
+<li>if we want to keep these records we need to check:</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Survey <span class="kw">WHERE</span> quant=<span class="st">&#39;sal&#39;</span> <span class="kw">AND</span> (person!=<span class="st">&#39;lake&#39;</span> <span class="kw">OR</span> person <span class="kw">IS</span> <span class="kw">NULL</span>);</code></pre></div>
+<blockquote>
+<h2 id="sorting-by-known-date" class="challenge">Sorting by Known Date</h2>
+<p>Write a query that sorts the records in <code>Visited</code> by date, omitting entries for which the date is not known (i.e., is null).</p>
+</blockquote>
+<blockquote>
+<h2 id="null-in-a-set" class="challenge">NULL in a Set</h2>
+<p>What do you expect the query:</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Visited <span class="kw">WHERE</span> dated <span class="kw">IN</span> (<span class="st">&#39;1927-02-08&#39;</span>, <span class="kw">NULL</span>);</code></pre></div>
+<p>to produce? What does it actually produce?</p>
+</blockquote>
+<blockquote>
+<h2 id="pros-and-cons-of-sentinels" class="challenge">Pros and Cons of Sentinels</h2>
+<p>Some database designers prefer to use a <a href="reference.html#sentinel-value">sentinel value</a>) to mark missing data rather than <code>null</code>. For example, they will use the date &quot;0000-00-00&quot; to mark a missing date, or -1.0 to mark a missing salinity or radiation reading (since actual readings cannot be negative). What does this simplify? What burdens or risks does it introduce?</p>
+</blockquote>
+</body>
+</html>
