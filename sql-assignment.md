@@ -1,6 +1,6 @@
-# SQL Assignment
+# SQL Assignment - GPS Data 101
 
-For this assignment you will write SQL queries against the survey.db database (found here: http://swcarpentry.github.io/sql-novice-survey/sql-novice-survey-data.zip) we used in the class. As a reminder, the database contains the following tables: 
+For this assignment you will write SQL queries against the survey.db database (found here: [http://swcarpentry.github.io/sql-novice-survey/sql-novice-survey-data.zip](http://swcarpentry.github.io/sql-novice-survey/sql-novice-survey-data.zip)) we used in the class. As a reminder, the database contains the following tables: 
 
 > **Person**: people who took readings.
 >
