@@ -122,7 +122,7 @@ reading&lt;=<span class="fl">1.0</span>;</code></pre></div>
 <span class="kw">GROUP</span> <span class="kw">BY</span> person;</code></pre></div>
 <ul>
 <li><code>GROUP BY</code> groups all the records with the same value for specified field together</li>
-<li>we can group by multiple critera</li>
+<li>we can group by multiple criteria</li>
 </ul>
 <div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span>   person, quant, <span class="fu">count</span>(reading), <span class="fu">round</span>(<span class="fu">avg</span>(reading), <span class="dv">2</span>)
 <span class="kw">FROM</span>     Survey
@@ -161,6 +161,63 @@ reading&lt;=<span class="fl">1.0</span>;</code></pre></div>
 <p>The function <code>group_concat(field, separator)</code> concatenates all the values in a field using the specified separator character (or ',' if the separator isn't specified). Use this to produce a one-line list of scientists' names, such as:</p>
 <div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql">William Dyer, Frank Pabodie, Anderson Lake, Valentina Roerich, Frank Danforth</code></pre></div>
 <p>Can you find a way to order the list by surname?`</p>
+</blockquote>
+<h3 id="combining-data">Combining data</h3>
+<p>In order to submit her data to a web site that aggregates historical meteorological data, Gina needs to format it as <strong>latitude</strong>, <strong>longitude</strong>, <strong>date</strong>, <strong>quantity</strong>, and <strong>reading</strong>. However, her latitudes and longitudes are in the Site table, while the dates of measurements are in the Visited table and the readings themselves are in the Survey table. She needs to combine these tables somehow.</p>
+<ul>
+<li>we use the SQL command JOIN for this</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> * <span class="kw">FROM</span> Site <span class="kw">JOIN</span> Visited;</code></pre></div>
+<ul>
+<li><code>JOIN</code> creates the cross product of two tables</li>
+<li>Joins each record of one table with each record of the other table to give all possible combos</li>
+<li>3 records in <code>Site</code> and 8 in <code>Visited</code> the join's output has 24 records (3*8=24)</li>
+<li>each table has 3 cols so 6 fields are returned</li>
+<li>JOIN doesn't figure out if the records are related - have to tell SQLITE how to combine</li>
+<li>Have to add clause telling we're only interested in combos that have same site name</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SElECT</span> * <span class="kw">FROM</span> Site <span class="kw">Join</span> Visited <span class="kw">On</span> Site.name=Visited.site;</code></pre></div>
+<ul>
+<li><code>ON</code> similar to <code>WHERE</code> - can use interchangeably</li>
+<li>Once we add this to our query, the database manager throws away records that combined information about the two different sites</li>
+<li>Notice we use <code>Table.field</code> to specify names in the output of the join</li>
+<li>do this b/c tables can have fields with same name</li>
+<li>we can now use same dotted notation to select the three columns we actually want in our task</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> Site.lat, Site.long, Visited.dated
+<span class="kw">FROM</span>   Site <span class="kw">JOIN</span> Visited
+<span class="kw">ON</span>     Site.name=Visited.site;</code></pre></div>
+<ul>
+<li>we can join multiple tables</li>
+<li>by adding more JOIN clauses</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> Site.lat, Site.long, Visited.dated, Survey.quant Survey.reading
+<span class="kw">FROM</span> Site
+<span class="kw">JOIN</span> Visited <span class="kw">ON</span> Site.name=Visited.site
+<span class="kw">JOIN</span> Survey <span class="kw">ON</span> Visited.ident=Survey.taken
+<span class="kw">WHERE</span> Visited.dated <span class="kw">IS</span> <span class="kw">NOT</span> <span class="kw">NULL</span>;</code></pre></div>
+<ul>
+<li>We can tell which records from <code>Site</code>, <code>Visited</code>, and <code>Survey</code> correspond to each other b/c those tables contain primary keys and foreign keys *<code>primary key</code> is a value (or combination of values) that uniquely identifies each record in a table</li>
+<li><code>foreign key</code> is a value (or combination of values) from one table that identifies a unique record in another table</li>
+<li>E.g. Person.ident is the primary key in the Person table, while Survey.person is the foreign key relating the survey table's entries to entreis in Person</li>
+</ul>
+<blockquote>
+<h2 id="listing-radiation-readings" class="challenge">Listing Radiation Readings</h2>
+<p>Write a query that lists all radiation readings from the DR-1 site.</p>
+</blockquote>
+<blockquote>
+<h2 id="wheres-frank" class="challenge">Where's Frank?</h2>
+<p>Write a query that lists all sites visited by people named &quot;Frank&quot;.</p>
+</blockquote>
+<blockquote>
+<h2 id="reading-queries" class="challenge">Reading Queries</h2>
+<p>Describe in your own words what the following query produces:</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">SELECT</span> Site.name <span class="kw">FROM</span> Site <span class="kw">JOIN</span> Visited
+<span class="kw">ON</span> Site.lat&lt;-<span class="fl">49.0</span> <span class="kw">AND</span> Site.name=Visited.site <span class="kw">AND</span> Visited.dated&gt;=<span class="st">&#39;1932-01-01&#39;</span>;</code></pre></div>
+</blockquote>
+<blockquote>
+<h2 id="who-has-been-where" class="challenge">Who has been where?</h2>
+<p>Write a query that shows each site with exact location (lat, long) ordered by visited date, followed by personal name and family name of the person who visited the site and the type of measurement taken and its reading. Please avoid all null values. Tip: you should get 15 records with 8 fields.</p>
 </blockquote>
 </body>
 </html>
