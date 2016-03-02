@@ -108,7 +108,7 @@ GROUP BY person;
 ~~~
 * `GROUP BY` groups all the records with the same value for specified field
   together
-* we can group by multiple critera
+* we can group by multiple criteria
 
 ~~~ {.sql}
 SELECT   person, quant, count(reading), round(avg(reading), 2)
@@ -185,3 +185,82 @@ this query:
 > ~~~
 >
 > Can you find a way to order the list by surname?`
+
+
+### Combining data
+
+In order to submit her data to a web site that aggregates historical meteorological data, Gina needs to format it as **latitude**, **longitude**, **date**, **quantity**, and **reading**. However, her latitudes and longitudes are in the Site table, while the dates of measurements are in the Visited table and the readings themselves are in the Survey table. She needs to combine these tables somehow.
+
+* we use the SQL command JOIN for this
+
+~~~{.sql}
+SELECT * FROM Site JOIN Visited;
+~~~
+
+* `JOIN` creates the cross product of two tables 
+  * Joins each record of one table with each record of the other table to give all possible combos
+* 3 records in `Site` and 8 in `Visited` the join's output has 24 records (3*8=24)
+* each table has 3 cols so 6 fields are returned
+* JOIN doesn't figure out if the records are related - have to tell SQLITE how to combine
+* Have to add clause telling we're only interested in combos that have same site name
+
+~~~{.sql}
+SElECT * FROM Site Join Visited On Site.name=Visited.site;
+~~~
+
+* `ON` similar to `WHERE` - can use interchangeably 
+* Once we add this to our query, the database manager throws away records that combined information about the two different sites 
+* Notice we use `Table.field` to specify names in the output of the join
+* do this b/c tables can have fields with same name
+* we can now use same dotted notation to select the three columns we actually want in our task 
+
+~~~{.sql}
+SELECT Site.lat, Site.long, Visited.dated
+FROM   Site JOIN Visited
+ON     Site.name=Visited.site;
+~~~
+
+* we can join multiple tables
+* by adding more JOIN clauses
+
+~~~{.sql}
+SELECT Site.lat, Site.long, Visited.dated, Survey.quant Survey.reading
+FROM Site
+JOIN Visited ON Site.name=Visited.site
+JOIN Survey ON Visited.ident=Survey.taken
+WHERE Visited.dated IS NOT NULL;
+~~~
+
+* We can tell which records from `Site`, `Visited`, and `Survey` correspond to each other b/c those tables contain primary keys and foreign keys
+*`primary key` is a value (or combination of values) that uniquely identifies  each record in a table
+* `foreign key` is a value (or combination of values) from one table that identifies a unique record in another table
+* E.g. Person.ident is the primary key in the Person table, while Survey.person is the foreign key relating the survey table's entries to entreis in Person
+
+
+> ## Listing Radiation Readings {.challenge}
+>
+> Write a query that lists all radiation readings from the DR-1 site.
+
+> ## Where's Frank? {.challenge}
+>
+> Write a query that lists all sites visited by people named "Frank".
+
+> ## Reading Queries {.challenge}
+>
+> Describe in your own words what the following query produces:
+>
+> ~~~ {.sql}
+> SELECT Site.name FROM Site JOIN Visited
+> ON Site.lat<-49.0 AND Site.name=Visited.site AND Visited.dated>='1932-01-01';
+> ~~~
+
+> ## Who has been where? {.challenge}
+>
+> Write a query that shows each site with exact location (lat, long) ordered by visited date,
+> followed by personal name and family name of the person who visited the site
+> and the type of measurement taken and its reading. Please avoid all null values.
+> Tip: you should get 15 records with 8 fields.
+
+[OUTER]: http://en.wikipedia.org/wiki/Join_%28SQL%29#Outer_join
+[rowid]: https://www.sqlite.org/lang_createtable.html#rowid
+
