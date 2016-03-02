@@ -59,7 +59,13 @@ For this assignment you will write SQL queries against the survey.db database (f
  |837  |roe   |sal  |22.5   |
  |844  |roe   |rad  |11.25  |
 
-Download  the file entitled *[yourID.sql](http://ucsdlib.github.io/win2016-gps-dm101/yourID.sql)*. Rename the file to include your ID, so its a12345678.sql. The file contains the following questions commented out (/* */ and -- are comments in SQL).  Write your queries in the blank lines betweent the questions. Do not uncomment the questions. After you have finished, email your file to: 
+## Instructions
+
+1. Download  the file entitled *[yourID.sql](http://ucsdlib.github.io/win2016-gps-dm101/yourID.sql)*. 
+2. Rename the file to include your ID, so it will look like a12345678.sql. 
+3 The file contains the following questions commented out (`/* */` and `--` are comments in SQL).  Write your queries in the blank lines between the questions. 
+4. Do not uncomment the questions. 
+5. After you have finished, email your file to: 
 
 challenges.gps.programming.ta@gmail.com
 
