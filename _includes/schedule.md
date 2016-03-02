@@ -26,7 +26,6 @@ NOTE: Because Monday (February 15th) falls on President's Day, we will meet on W
 |           |                                 | - [Aggregation](http://goo.gl/QHmEpp)                     |
 |           | - Tim Dennis                    | - Notes: [Selecting, Sorting & Filtering](http://goo.gl/2iaB2c), [Aggregation & Combine](http://goo.gl/BjP8L4)    |
 +-----------+---------------------------------+-----------------------------------------------------------+
-| Mar. 2    | Databases and SQL               | - Combining, creating & modifying data                    |
-|           |                                 | - Programming with databases                              |
-|           | - Tim Dennis & Hyeonsu Kang     | - Hands-on exercies & assignment                          |
+| Mar. 2    | Databases and SQL               | - [Combining](http://goo.gl/b4YRrm), [creating & modifying data](http://goo.gl/jpytlk)      |
+|           | - Tim Dennis & Hyeonsu Kang     | - [Assignment](sql-assignment.html) & [yourID.sql](youID.sql)    |
 +-----------+---------------------------------+-----------------------------------------------------------+
