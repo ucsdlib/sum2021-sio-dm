@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="css/bootstrap/bootstrap-theme.css" type="text/css" />
+  <link rel="stylesheet" href="css/swc.css" type="text/css" />
+</head>
+<body>
+<h1 id="sql-assignment">SQL Assignment</h1>
+<p>For this assignment you will write SQL queries against the survey.db database (found here: http://swcarpentry.github.io/sql-novice-survey/sql-novice-survey-data.zip) we used in the class. As a reminder, the database contains the following tables:</p>
+<blockquote>
+<p><strong>Person</strong>: people who took readings.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">ident</th>
+<th align="left">personal</th>
+<th align="left">family</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">dyer</td>
+<td align="left">William</td>
+<td align="left">Dyer</td>
+</tr>
+<tr class="even">
+<td align="left">pb</td>
+<td align="left">Frank</td>
+<td align="left">Pabodie</td>
+</tr>
+<tr class="odd">
+<td align="left">lake</td>
+<td align="left">Anderson</td>
+<td align="left">Lake</td>
+</tr>
+<tr class="even">
+<td align="left">roe</td>
+<td align="left">Valentina</td>
+<td align="left">Roerich</td>
+</tr>
+<tr class="odd">
+<td align="left">danforth</td>
+<td align="left">Frank</td>
+<td align="left">Danforth</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<blockquote>
+<p><strong>Site</strong>: locations where readings were taken.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">lat</th>
+<th align="left">long</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">DR-1</td>
+<td align="left">-49.85</td>
+<td align="left">-128.57</td>
+</tr>
+<tr class="even">
+<td align="left">DR-3</td>
+<td align="left">-47.15</td>
+<td align="left">-126.72</td>
+</tr>
+<tr class="odd">
+<td align="left">MSK-4</td>
+<td align="left">-48.87</td>
+<td align="left">-123.4</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<blockquote>
+<p><strong>Visited</strong>: when readings were taken at specific sites.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">ident</th>
+<th align="left">site</th>
+<th align="left">dated</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">619</td>
+<td align="left">DR-1</td>
+<td align="left">1927-02-08</td>
+</tr>
+<tr class="even">
+<td align="left">622</td>
+<td align="left">DR-1</td>
+<td align="left">1927-02-10</td>
+</tr>
+<tr class="odd">
+<td align="left">734</td>
+<td align="left">DR-3</td>
+<td align="left">1930-01-07</td>
+</tr>
+<tr class="even">
+<td align="left">735</td>
+<td align="left">DR-3</td>
+<td align="left">1930-01-12</td>
+</tr>
+<tr class="odd">
+<td align="left">751</td>
+<td align="left">DR-3</td>
+<td align="left">1930-02-26</td>
+</tr>
+<tr class="even">
+<td align="left">752</td>
+<td align="left">DR-3</td>
+<td align="left">-null-</td>
+</tr>
+<tr class="odd">
+<td align="left">837</td>
+<td align="left">MSK-4</td>
+<td align="left">1932-01-14</td>
+</tr>
+<tr class="even">
+<td align="left">844</td>
+<td align="left">DR-1</td>
+<td align="left">1932-03-22</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<blockquote>
+<p><strong>Survey</strong>: the actual readings.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">taken</th>
+<th align="left">person</th>
+<th align="left">quant</th>
+<th align="left">reading</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">619</td>
+<td align="left">dyer</td>
+<td align="left">rad</td>
+<td align="left">9.82</td>
+</tr>
+<tr class="even">
+<td align="left">619</td>
+<td align="left">dyer</td>
+<td align="left">sal</td>
+<td align="left">0.13</td>
+</tr>
+<tr class="odd">
+<td align="left">622</td>
+<td align="left">dyer</td>
+<td align="left">rad</td>
+<td align="left">7.8</td>
+</tr>
+<tr class="even">
+<td align="left">622</td>
+<td align="left">dyer</td>
+<td align="left">sal</td>
+<td align="left">0.09</td>
+</tr>
+<tr class="odd">
+<td align="left">734</td>
+<td align="left">pb</td>
+<td align="left">rad</td>
+<td align="left">8.41</td>
+</tr>
+<tr class="even">
+<td align="left">734</td>
+<td align="left">lake</td>
+<td align="left">sal</td>
+<td align="left">0.05</td>
+</tr>
+<tr class="odd">
+<td align="left">734</td>
+<td align="left">pb</td>
+<td align="left">temp</td>
+<td align="left">-21.5</td>
+</tr>
+<tr class="even">
+<td align="left">735</td>
+<td align="left">pb</td>
+<td align="left">rad</td>
+<td align="left">7.22</td>
+</tr>
+<tr class="odd">
+<td align="left">735</td>
+<td align="left">-null-</td>
+<td align="left">sal</td>
+<td align="left">0.06</td>
+</tr>
+<tr class="even">
+<td align="left">735</td>
+<td align="left">-null-</td>
+<td align="left">temp</td>
+<td align="left">-26.0</td>
+</tr>
+<tr class="odd">
+<td align="left">751</td>
+<td align="left">pb</td>
+<td align="left">rad</td>
+<td align="left">4.35</td>
+</tr>
+<tr class="even">
+<td align="left">751</td>
+<td align="left">pb</td>
+<td align="left">temp</td>
+<td align="left">-18.5</td>
+</tr>
+<tr class="odd">
+<td align="left">751</td>
+<td align="left">lake</td>
+<td align="left">sal</td>
+<td align="left">0.1</td>
+</tr>
+<tr class="even">
+<td align="left">752</td>
+<td align="left">lake</td>
+<td align="left">rad</td>
+<td align="left">2.19</td>
+</tr>
+<tr class="odd">
+<td align="left">752</td>
+<td align="left">lake</td>
+<td align="left">sal</td>
+<td align="left">0.09</td>
+</tr>
+<tr class="even">
+<td align="left">752</td>
+<td align="left">lake</td>
+<td align="left">temp</td>
+<td align="left">-16.0</td>
+</tr>
+<tr class="odd">
+<td align="left">752</td>
+<td align="left">roe</td>
+<td align="left">sal</td>
+<td align="left">41.6</td>
+</tr>
+<tr class="even">
+<td align="left">837</td>
+<td align="left">lake</td>
+<td align="left">rad</td>
+<td align="left">1.46</td>
+</tr>
+<tr class="odd">
+<td align="left">837</td>
+<td align="left">lake</td>
+<td align="left">sal</td>
+<td align="left">0.21</td>
+</tr>
+<tr class="even">
+<td align="left">837</td>
+<td align="left">roe</td>
+<td align="left">sal</td>
+<td align="left">22.5</td>
+</tr>
+<tr class="odd">
+<td align="left">844</td>
+<td align="left">roe</td>
+<td align="left">rad</td>
+<td align="left">11.25</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>Download the file entitled <em>yourID.sql</em>. Rename the file to include your ID, so its a12345678.sql. The file contains the following questions commented out (/* */ and -- are comments in SQL). Write your queries in the blank lines betweent the questions. Do not uncomment the questions. After you have finished, email your file to:</p>
+<p>challenges.gps.programming.ta@gmail.com</p>
+<blockquote>
+<h2 id="finding-outliers" class="challenge">1. Finding Outliers</h2>
+<p>Normalized salinity readings are supposed to be between 0.0 and 1.0. Write a query that selects all records from <code>Survey</code> with salinity values outside this range.</p>
+</blockquote>
+<blockquote>
+<h2 id="sorting-by-known-date" class="challenge">2. Sorting by Known Date</h2>
+<p>Write a query that sorts the records in <code>Visited</code> by date, omitting entries for which the date is not known (i.e., is null).</p>
+</blockquote>
+<blockquote>
+<h2 id="counting-temperature-readings" class="challenge">3 Counting Temperature Readings</h2>
+<p>How many temperature readings did Frank Pabodie record, and what was their average value?</p>
+</blockquote>
+<blockquote>
+<h2 id="averaging-with-null" class="challenge">4 Averaging with NULL</h2>
+<p>The average of a set of values is the sum of the values divided by the number of values. Does this mean that the <code>avg</code> function returns 2.0 or 3.0 when given the values 1.0, <code>null</code>, and 5.0?</p>
+</blockquote>
+<blockquote>
+<h2 id="listing-radiation-readings" class="challenge">5 Listing Radiation Readings</h2>
+<p>Write a query that lists all radiation readings from the DR-1 site.</p>
+</blockquote>
+<h2 id="turning-in-your-work">Turning in your work:</h2>
+<p>Save your SQL file as yourID.sql and email it as an attachment to:</p>
+<p>challenges.gps.programming.ta@gmail.com</p>
+</body>
+</html>
