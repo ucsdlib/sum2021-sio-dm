@@ -28,3 +28,19 @@ radadj <- dbGetQuery(db, "SELECT 1.05 * reading FROM Survey WHERE quant='rad'")
 hist(radadj$`1.05 * reading`)
 
 dbDisconnect(db)
+
+### Dplyr
+#https://cran.r-project.org/web/packages/dplyr/vignettes/databases.html
+survey_db <- src_sqlite('survey.db', create=T)
+
+#create tbl from sql
+tbl(survey_db, sql("SElECT * FROM Person"))
+
+# example using dplyr verbs
+select(Person,ident)
+tbl(survey_db)
+tbl(Person)
+
+survey_db.Person
+person <- tbl(survey_db, "Person")
+dim(person)

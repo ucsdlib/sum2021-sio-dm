@@ -28,4 +28,6 @@ NOTE: Because Monday (February 15th) falls on President's Day, we will meet on W
 +-----------+---------------------------------+-----------------------------------------------------------+
 | Mar. 2    | Databases and SQL               | - [Combining](http://goo.gl/b4YRrm), [creating & modifying data](http://goo.gl/jpytlk)      |
 |           | - Tim Dennis & Hyeonsu Kang     | - [Assignment](sql-assignment.html) & [yourID.sql](yourID.sql)    |
+|           |                                 | - Lecture Notes: [Aggregation & Joins](sql-agg-join.html) |
+|           |                                 | - R & SQLITE: [sqlite-ex.R](sqlite-ex.R)|
 +-----------+---------------------------------+-----------------------------------------------------------+
