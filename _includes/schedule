@@ -529,10 +529,10 @@ pre.editor-colors .fold-marker:after {
   <body class='markdown-preview' data-use-github-style><p>+-----------+---------------------------------+-----------------------------------------------------------+
 | Date      | Class                           | Topics                                                    |
 +===========+=================================+===========================================================+
-| Feb. 21   |TBD                              | - Data Management Best Practices Lecture                  |
+| Feb. 21   |TBD                              | - Data Management Best Practices Lecture                  | 
 |           |                                 | - Open Science Framework                                  |
 |           |                                 | - <a href="https://goo.gl/M3HeT7">TIER Protocol</a>                  |
-|           |                                 |
+|           |                                 | 
 +-----------+---------------------------------+-----------------------------------------------------------+
 | Feb. 26   |TBD                              | - Intro to SQL                                                    |
 |                  |                                                  |                                                                |
@@ -540,6 +540,6 @@ pre.editor-colors .fold-marker:after {
 +-----------+---------------------------------+-----------------------------------------------------------+
 | Feb. 5    |TBD                              | - Intro to Unix Shell                                     |
 |           |                                 | - Review                                                  |
-|           |                                 |                                                           |
+|           |                                 |                                                           | 
 +-----------+---------------------------------+-----------------------------------------------------------+</p></body>
 </html>
