@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>dm101-assignment1-gps</title>
+<title>challenges-bash</title>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
@@ -52,10 +52,8 @@
 .highlight .err { border: 1px solid #FF0000 } /* Error */
 .highlight .k { color: #008000; font-weight: bold } /* Keyword */
 .highlight .o { color: #666666 } /* Operator */
-.highlight .ch { color: #408080; font-style: italic } /* Comment.Hashbang */
 .highlight .cm { color: #408080; font-style: italic } /* Comment.Multiline */
 .highlight .cp { color: #BC7A00 } /* Comment.Preproc */
-.highlight .cpf { color: #408080; font-style: italic } /* Comment.PreprocFile */
 .highlight .c1 { color: #408080; font-style: italic } /* Comment.Single */
 .highlight .cs { color: #408080; font-style: italic } /* Comment.Special */
 .highlight .gd { color: #A00000 } /* Generic.Deleted */
@@ -176,87 +174,16 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Assignment-1---DM101---GPS">Assignment 1 - DM101 - GPS<a class="anchor-link" href="#Assignment-1---DM101---GPS">&#182;</a></h1><p>For this assignment, you will write a shell script to organize an unorganized directory of data and do files into a structure of folders and sub-folders expressed in the TIER Protocol. We will take an existing Stata project that was posted to the TIER student showcase &lt; <a href="https://dataverse.harvard.edu/dataverse/TIER">https://dataverse.harvard.edu/dataverse/TIER</a> &gt; and put the files in the appropriate folders.  The TIER file structure hierarchy looks like this:</p>
-<p><img src="https://www.haverford.edu/sites/default/files/Office/TIER/tier-folder-structure.png" alt="TIER folder"></p>
-<p>We are only concerned with the "Processing and Analysis" sub-folders for this assignment. For this assignment, you will need to create the TEIR directory stucture from "Processing and Analysis" and below first and then copy the files into the sub-folders as specified below.</p>
-<p><strong>DUE:</strong> By Thursday, Februrary 25th, midnight<br>
-<strong>What to turn in:</strong> A shell script with your student ID:  a12345678.sh<br>
-<strong>Where to turn in:</strong> Email it as an attachment to challenges.gps.programming.ta@gmail.com<br>
-<strong>TL;DR Instructions:</strong></p>
-<ol>
-<li>Download the zipped up folder that needs to be organized from: <a href="http://ucsdlib.github.io/win2016-gps-dm101/assignment1-dm101-gps.zip">http://ucsdlib.github.io/win2016-gps-dm101/assignment1-dm101-gps.zip</a>   </li>
-<li>Unzip on your desktop </li>
-<li>Rename the yourID.sh file in the folder to included your student Id, so a12345678.sh  </li>
-<li>Edit the file and write bash commands to create the "Processing and Analysis" folder and its sub-folders</li>
-<li>Use bash commands to copy the files into the folder so it looks like: <ul>
-<li>Processing and Analysis<ul>
-<li>Analysis Data <ul>
-<li>merged.dta</li>
-</ul>
-</li>
-<li>Command Files<ul>
-<li>figures.do</li>
-<li>import.do</li>
-<li>regression.do</li>
-</ul>
-</li>
-<li>Importable Data<ul>
-<li>dataagg2.dta</li>
-<li>rose_import.dta</li>
-<li>wdi_download.txt</li>
-<li>wdi_download.xlsx</li>
-<li>wdi_import.dta</li>
-</ul>
-</li>
-<li>read_me.pdf</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Test your script and email to challenges.gps.programming.ta@gmail.com</li>
-</ol>
-<p><strong>TIPs</strong></p>
-<ul>
-<li>To create a directory with spaces use quotes:  <code>$ mkdir 'This Directory Has Spaces'</code></li>
-<li>Look for patterns in your data and use the wildcard ("*") to copy multiple files at once</li>
-<li>Use <code>cp</code> instead of <code>mv</code>, so you don't have to undo your work if you get the script wrong</li>
-<li>Run your script more than once and make sure it works:  bash a12345678.sh (remember you can rm -r "Processing and Analysis" after you run your script to start anew)</li>
-</ul>
-<p>Fuller instructions follow:</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="1.-Download-the-following-assignment-zip-file-and-unzip-the-files-into-its-own-folder">1. Download the following assignment zip file and unzip the files into its own folder<a class="anchor-link" href="#1.-Download-the-following-assignment-zip-file-and-unzip-the-files-into-its-own-folder">&#182;</a></h2><p>Assignment zip:  <a href="http://ucsdlib.github.io/win2016-gps-dm101/assignment1-dm101-gps.zip">http://ucsdlib.github.io/win2016-gps-dm101/assignment1-dm101-gps.zip</a></p>
-<p>Make sure you can navigate to this folder using your bash terminal, such as:</p>
-<p><code>$ cd /home/jtdennis/Desktop/assignment1</code></p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="2-Rename-the-shell-script-in-the-folder-with-your-ID">2 Rename the shell script in the folder with your ID<a class="anchor-link" href="#2-Rename-the-shell-script-in-the-folder-with-your-ID">&#182;</a></h2><p>Rename the file named <code>yourID.sh</code> with your a#, so a12345678.sh.  You can do this with the unix command <code>mv</code>:</p>
-
+<h3 id="1.-A-file-called-animals.txt-contains-the-following-data:">1. A file called <code>animals.txt</code> contains the following data:<a class="anchor-link" href="#1.-A-file-called-animals.txt-contains-the-following-data:">&#182;</a></h3>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre>ls *.sh
-mv yourID.sh a12345678.sh
-ls *.sh
+<div class=" highlight hl-bash"><pre>cat animals.txt
 </pre></div>
 
 </div>
@@ -269,9 +196,14 @@ ls *.sh
 
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>yourID.sh
-a12345678.sh
-</pre>
+<pre>2012-11-05,deer
+2012-11-05,rabbit
+2012-11-05,raccoon
+2012-11-06,rabbit
+2012-11-06,deer
+2012-11-06,fox
+2012-11-07,rabbit
+2012-11-07,bear</pre>
 </div>
 </div>
 
@@ -284,210 +216,18 @@ a12345678.sh
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>You may also rename manually via Windows Explorer or Mac Finder.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="3.-Edit-the-shell-file-you-just-renamed-(or-moved)-and-write-bash-commands-to-organize-the-files-in-the-folder-into-the-following-heirarchy:">3. Edit the shell file you just renamed (or moved) and write bash commands to organize the files in the folder into the following heirarchy:<a class="anchor-link" href="#3.-Edit-the-shell-file-you-just-renamed-(or-moved)-and-write-bash-commands-to-organize-the-files-in-the-folder-into-the-following-heirarchy:">&#182;</a></h2>
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[29]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre>tree <span class="s2">&quot;Processing and Analysis&quot;</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Processing\ and\ Analysis
-├── Analysis\ Data
-│   └── merged.dta
-├── Command\ Files
-│   ├── figures.do
-│   ├── import.do
-│   └── regressions.do
-├── Importable\ Data
-│   ├── dataagg2.dta
-│   ├── rose_import.dta
-│   ├── wdi_download.txt
-│   ├── wdi_download.xlsx
-│   └── wdi_import.dta
-└── read_me.pdf
-
-3 directories, 10 files
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><code>tree</code> is a bash command that prints out the heirarchy of a directory, but it doesn't come with bash by default on Git for Winows or Mac. We are only using it here to show how the files are organized on the instructor's machine. We also create a bulleted heirarchy below.  Note that bash prints a backslash "\" when there are spaces in a filename or directory. The backslash is a symbol to tell unix to treat the spaces as part of the filename. Otherwise, some commands might interpret each word as a separate filename. This is really a legacy of unix's past because spaces in filenames or directories were discouraged historically.</p>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>In a bulleted list without the "\" this is:</p>
-<ul>
-<li>Processing and Analysis<ul>
-<li>Analysis Data <ul>
-<li>merged.dta</li>
-</ul>
-</li>
-<li>Command Files<ul>
-<li>figures.do</li>
-<li>import.do</li>
-<li>regression.do</li>
-</ul>
-</li>
-<li>Importable Data<ul>
-<li>dataagg2.dta</li>
-<li>rose_import.dta</li>
-<li>wdi_download.txt</li>
-<li>wdi_download.xlsx</li>
-<li>wdi_import.dta</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>read_me.pdf</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>TIPs</strong></p>
-<ul>
-<li>To create a directory with spaces you can use quotes:  <code>mkdir "This Directory Has Spaces"</code></li>
-</ul>
+<p>What text passes through each of the pipes and the final redirect in the pipeline below?</p>
+<p><code>cat animals.txt | head -5 | tail -3 | sort -r &gt; final.txt</code></p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-bash"><pre>mkdir <span class="s2">&quot;This Directory Has Spaces&quot;</span>
-ls -F
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>Processing and Analysis/	merged.dta
-This Directory Has Spaces/	read_me.pdf*
-a12345678.sh			regressions.do*
-dataagg2.dta*			rose_import.dta
-dm101-assignment1-gps.ipynb	wdi_download.txt*
-figures.do*			wdi_download.xlsx*
-import.do*			wdi_import.dta
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Look for patterns in your data and use the wildcard ("*") to copy multiple files at once</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre>ls *.do
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area"><div class="prompt"></div>
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>figures.do	import.do	regressions.do
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Use cp instead of mv, so you don't have to undo your works if you get the script wrong</li>
-</ul>
-
-</div>
-</div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-bash"><pre>cp read_me.pdf <span class="s2">&quot;Processing and Analysis&quot;</span>
+<div class=" highlight hl-bash"><pre>cat animals.txt <span class="p">|</span> head -5 <span class="p">|</span> tail -3 <span class="p">|</span> sort -r &gt; final.txt
 </pre></div>
 
 </div>
@@ -508,35 +248,84 @@ import.do*			wdi_import.dta
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered">
-<div class="prompt input_prompt">
-</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<ul>
-<li>Run your script more than once and make sure it works:  <code>$ bash a12345678.sh</code> (remember you can rm -r "Processing and Analysis" after you run your script to start anew)</li>
-</ul>
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre>cat final.txt
+</pre></div>
 
 </div>
 </div>
 </div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>2012-11-06,rabbit
+2012-11-06,deer
+2012-11-05,raccoon
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="4.-Turn-in-your-work">4. Turn in your work<a class="anchor-link" href="#4.-Turn-in-your-work">&#182;</a></h2><p>Email your shell script (the a12345678.sh) to: challenges.gps.programming.ta@gmail.com.</p>
-<p><strong>DO NOT alter the last line in the file that reads: tar -zcvf process-data.tar.gz "Processing and Analysis/"</strong></p>
+<h3 id="2.-This-command-produces-the-following-output:">2. This command produces the following output:<a class="anchor-link" href="#2.-This-command-produces-the-following-output:">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-bash"><pre>cut -d , -f <span class="m">2</span> animals.txt
+</pre></div>
 
 </div>
 </div>
 </div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area"><div class="prompt"></div>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>deer
+rabbit
+raccoon
+rabbit
+deer
+fox
+rabbit
+bear
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>If you have questions, post to piazza or email one of the instructors: Tim Dennis <a href="mailto:timdennis@ucsd.edu">timdennis@ucsd.edu</a>, Reid Otsuji <a href="mailto:rotsuji@ucsd.edu">rotsuji@ucsd.edu</a>, or Hyeonsu Kang <a href="mailto:hyk149@eng.ucsd.edu">hyk149@eng.ucsd.edu</a>.</strong></p>
+<p>What other command(s) could be added to this in a pipeline to find out what animals the file contains (without any duplicates in their names)?</p>
 
 </div>
 </div>
