@@ -2,7 +2,7 @@
 layout: workshop
 root: .
 venue: "Data Management 101 - School of Global Policy and Strategy"      # brief name of host site without address (e.g., "Euphoric State University")
-address: "Room 3202, 9500 Gilman Drive, #0519, La Jolla, CA"    # street address of workshop (e.g., "123 Forth Street, Blimingen, Euphoria")
+address: "Robinson Auditorium, 9500 Gilman Drive, #0519, La Jolla, CA"    # street address of workshop (e.g., "123 Forth Street, Blimingen, Euphoria")
 country: "us"    # country (lowercase two-letter ISO code such as "fr" - see https://en.wikipedia.org/wiki/ISO_3166-1)
 language: "en"   # language (lowercase two-letter ISO code such as "fr" - see https://en.wikipedia.org/wiki/ISO_639-1)
 latlng: "32.885125,-117.241173"     # fractional latitude and longitude (e.g., "41.7901128,-87.6007318"; you can use http://www.latlong.net/)
@@ -14,7 +14,7 @@ days: "Mon/Wed"
 instructor: ["Mary Linn Bergstrom", "Reid Otsuji"] # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
 helper: ["Reid Otsuji"]     # list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 contact: "rotsuji@ucsd.edu"    # contact email address for workshop organizer, such as "grace@hopper.org"
-etherpad: "https://public.etherpad-mozilla.org/p/gps-dm101" # optional (insert the URL for your Etherpad if you're using one)
+etherpad: "https://public.etherpad-mozilla.org/p/2018-gps-dm" # optional (insert the URL for your Etherpad if you're using one)
 eventbrite:       # optional (insert the alphanumeric key for Eventbrite registration, e.g., "1234567890AB")
 ---
 <!--
@@ -133,9 +133,11 @@ scrolling="auto">
 <p id = "data">
   <strong>Data:</strong>
   <ul>
+    <!--
     <li>Download the <a href="http://swcarpentry.github.io/shell-novice/shell-novice-data.zip">shell-novice-files.zip </a> and move the file to your <strong>Desktop</strong>.</li>
     <li>Double-click on the zip file to unzip it. You should end up with a new folder called <strong>data-shell</strong>.</li>
-    <li>Dowload the <a href="http://files.software-carpentry.org/survey.db">survey.db</a> and put it on your desktop inside a sql folder.</li>
+  -->
+    <li>Dowload the <a href="https://data-lessons.github.io/sql-socialsci/data/SN7577.sqlite">SN7577</a> and put it on your desktop inside a sql folder.</li>
   </ul>
 
 </p>
@@ -218,6 +220,7 @@ scrolling="auto">
       <li><a href="{{site.swc_githubio}}/shell-novice/reference.html">Reference...</a></li>
     </ul>
   </div>
+  <!--
   <div class='row'>
   <div class="col-md-6">
     <h3 id="syllabus-of">Data Organization in Open Refine</h3>
@@ -231,7 +234,7 @@ scrolling="auto">
   </div>
 
 </div>
-
+-->
   <div class="col-md-6">
     <h3 id="syllabus-sql">Managing Data with SQL</h3>
     <ul>
@@ -274,7 +277,10 @@ scrolling="auto">
   access to the software described below. In addition, you will
   need an up-to-date web browser.
 </p>
-<div id="shell"> <!-- Start of 'shell' section. -->
+
+
+<div id="shell"> <!-- Start of 'shell' section.-->
+
   <h3>The Bash Shell</h3>
 
   <p>
@@ -352,7 +358,9 @@ scrolling="auto">
     </div>
   </div>
 </div> <!-- End of 'shell' section. -->
-<div id="sql"> <!-- Start of 'SQLite' section. -->
+
+<!-- start of sql lite section
+<div id="sql">
   <h3>SQLite</h3>
 
   <p>
@@ -365,7 +373,7 @@ scrolling="auto">
   </p>
   <p>
   </p>
-
+-->
 <!--
   <div class="row">
     <div class="col-md-4">
@@ -388,44 +396,7 @@ scrolling="auto">
     </div>
   </div>
 -->
-</div> <!-- End of 'SQLite' section. -->
-<div class="row">
-  <h3>A spreadsheet program</h3>
-  <p>For this workshop you will need a spreadsheet program. Many people already have
-    Microsoft Excel installed, and if you do, you're set! </p>
 
-    <p>If you need a spreadsheet
-      program, there are a few other options, like OpenOffice and LibreOffice. Install
-      instructions for LibreOffice, which is free and open source, are here.</p>
-
-      <ul>
-        <li><b>Download the Installer</b>
-          <br>Install LibreOffice by going to the <a href=https://www.libreoffice.org/download/libreoffice-fresh/>installation page</a>. The Operating System of your machine
-          should automatically be selected. Click <b>Download Version 4.4.2</b>. You
-          will go to a page that asks about a donation, but you don't need to make one.
-          Your download should begin automatically.
-          <li><b>Install LibreOffice</b>
-            <br>Once the installer is downloaded, double click on it and it should install.
-            <li>To use LibreOffice, double click on the icon and it will open.</li>
-          </ul>
-
-          <h3>OpenRefine</h3>
-          <p>OpenRefine (previously Google Refine) is a tool for data cleaning
-            that runs through a web browser, and any browser -
-            Safari, Firefox, Chrome, Explorer - should work fine.
-            You will need to download Google Refine and install it,
-            and when you open it, it will run through the browser, but you don't need
-            an internet connection, and the data will all be stored on your computer.</p>
-            <ul>
-              <li>Go to the OpenRefine <a href="http://openrefine.org/download.html">download
-                page</a> </li>
-                <li>Click on <i>Windows kit</i> to download the install file</li>
-                <li>To use it, unzip, and double-click on google-refine.exe (if you're having issues
-                  with google-refine.exe try refine.bat instead)</li>
-                  <li>Google Refine will then open in your web browser.</li>
-                  <li>If it doesn't open automatically, open a web broswer after you've started the program and go to the URL <code>http://localhost:3333</code> and you should see OpenRefine.</li>
-                </ul>
-              </div>
 <!--
   Uncomment this section if you are using our virtual machine.
 
