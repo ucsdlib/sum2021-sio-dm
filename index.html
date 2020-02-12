@@ -1,20 +1,20 @@
 ---
 layout: workshop
 root: .
-venue: "Data Management 101 - School of Global Policy and Strategy"      # brief name of host site without address (e.g., "Euphoric State University")
-address: "Robinson Auditorium, 9500 Gilman Drive, #0519, La Jolla, CA"    # street address of workshop (e.g., "123 Forth Street, Blimingen, Euphoria")
+venue: "Intro to Data Management - School of Global Policy and Strategy"      # brief name of host site without address (e.g., "Euphoric State University")
+address: "Gardner Room 1235, 9500 Gilman Drive, #0519, La Jolla, CA"    # street address of workshop (e.g., "123 Forth Street, Blimingen, Euphoria")
 country: "us"    # country (lowercase two-letter ISO code such as "fr" - see https://en.wikipedia.org/wiki/ISO_3166-1)
 language: "en"   # language (lowercase two-letter ISO code such as "fr" - see https://en.wikipedia.org/wiki/ISO_639-1)
 latlng: "32.885125,-117.241173"     # fractional latitude and longitude (e.g., "41.7901128,-87.6007318"; you can use http://www.latlong.net/)
-humandate: "Feb 21- Mar 5, 2018"  # human-readable date (e.g., "Feb 17-18, 2020")
-humantime: "6:30 pm -9:20 pm"  # human-readable time (e.g., "9:00 am - 4:30 pm")
-startdate: "2018-02-21"  # use YYYY-MM-DD format like "2015-01-01"
-enddate: "2018-03-05"  # use YYYY-MM-DD format like" 2015-01-02"
-days: "Mon/Wed"
+humandate: "Feb 20 - Mar 2, 2018"  # human-readable date (e.g., "Feb 17-18, 2020")
+humantime: "3:30 pm -6:30 pm"  # human-readable time (e.g., "9:00 am - 4:30 pm")
+startdate: "2018-02-20"  # use YYYY-MM-DD format like "2015-01-01"
+enddate: "2018-03-02"  # use YYYY-MM-DD format like" 2015-01-02"
+days: "Mon/Thurs"
 instructor: ["Mary Linn Bergstrom", "Reid Otsuji"] # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
-helper: ["Kay lyu"]     # list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
+helper: ["Rick Mccosh, Stephanie Labou, Federico Arroyo"]     # list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
 contact: "rotsuji@ucsd.edu"    # contact email address for workshop organizer, such as "grace@hopper.org"
-etherpad: "https://public.etherpad-mozilla.org/p/2018-gps-dm" # optional (insert the URL for your Etherpad if you're using one)
+etherpad: "https://hackmd.io/@U2NG/HJREBAbXU" # optional (insert the URL for your Etherpad if you're using one)
 eventbrite:       # optional (insert the alphanumeric key for Eventbrite registration, e.g., "1234567890AB")
 ---
 <!--
@@ -53,7 +53,7 @@ scrolling="auto">
   the pitch.
 -->
 <p>
-  This is the website for the School of Global Policy and Strategy short course in data management and SQL.  This course will introduce you best practices in data management, preparation and representation, including the basics of SQL.  In order to earn a certificate of proficiency, you must attend all of the class meetings for the course, do the short coding assignments, and pass the quizzes. Courses begin on Feb. 21.
+  This is the website for the School of Global Policy and Strategy short course in data management and SQL.  This course will introduce you best practices in data management, preparation and representation, including the basics of SQL.  In order to earn a certificate of proficiency, you must attend all of the class meetings for the course, do the short coding assignments, and pass the quizzes.
 </p>
 
 
@@ -178,9 +178,9 @@ scrolling="auto">
 -->
 {% if page.etherpad %}
 <p id="etherpad">
-  <strong>Etherpad:</strong> <a href="{{page.etherpad}}">{{page.etherpad}}</a>.
+  <strong>HackMD:</strong> <a href="{{page.etherpad}}">{{page.etherpad}}</a>.
   <br/>
-  We will use this Etherpad for chatting, taking notes, and sharing URLs and bits of code.
+  We will use this HackMD for collaborative notes, sharing URLs and bits of code.
 </p>
 {% endif %}
 
@@ -208,7 +208,7 @@ scrolling="auto">
 <div class="row">
 
   <div class="col-md-6">
-
+<!--
     <h3 id="syllabus-shell">The Unix Shell</h3>
     <ul>
       <li>Files and directories</li>
@@ -278,8 +278,9 @@ scrolling="auto">
   need an up-to-date web browser.
 </p>
 
-
-<div id="shell"> <!-- Start of 'shell' section.-->
+<!-- Start of 'shell' section.-->
+<--
+<div id="shell">
 
   <h3>The Bash Shell</h3>
 
@@ -287,7 +288,6 @@ scrolling="auto">
     Bash is a commonly-used shell that gives you the power to do simple
     tasks more quickly.
   </p>
-
   <div class="row">
     <div class="col-md-4">
       <h4 id="shell-windows">Windows</h4>
@@ -357,9 +357,13 @@ scrolling="auto">
       </p>
     </div>
   </div>
-</div> <!-- End of 'shell' section. -->
+</div>
 
-<!-- start of sql lite section
+
+<!-- End of 'shell' section. -->
+
+
+<!-- start of sql lite section -->
 <div id="sql">
   <h3>SQLite</h3>
 
@@ -373,8 +377,7 @@ scrolling="auto">
   </p>
   <p>
   </p>
--->
-<!--
+
   <div class="row">
     <div class="col-md-4">
       <h4 id="sql-windows">Windows</h4>
@@ -395,7 +398,6 @@ scrolling="auto">
       </p>
     </div>
   </div>
--->
 
 <!--
   Uncomment this section if you are using our virtual machine.
