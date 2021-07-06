@@ -1,13 +1,11 @@
 #### Data Management Best Practices
 
-* [TIER Protocol](https://www.haverford.edu/tier) - A defined protocol for structuring and managing code, data and output of your resercher
+* [TIER Protocol](https://www.haverford.edu/tier) - A defined protocol for structuring and managing code, data and output of your researcher
+* [23-Research-Data-Things](https://data-lessons.github.io/23-rd-things/) - 23 (research data) Things is a self-guided training concept for anybody interested in data.
 * [RDCP](http://libraries.ucsd.edu/services/data-curation/data-management/index.html) - Library unit who can help you with your research data needs
 * [Workflow for Data Analysis using Stata](http://roger.ucsd.edu/record=b8897217~S9) by Scott Long - A book that has informed many efforts to produce reproducible workflows in Stata
 
-#### Unix/Bash
 
-* [Explainshell](http://explainshell.com/)
-* [Data Science at the Command Line](http://goo.gl/clHYGu) - a book the library subscribes to through O'Reilly's Safari. There are many other books related to Unix, Bash, etc. in Safari.
 
 
 <!--
