@@ -1,20 +1,20 @@
 ---
 layout: workshop
 root: .
-venue: "Intro to Data Management - School of Global Policy and Strategy"      # brief name of host site without address (e.g., "Euphoric State University")
-address: "Zoom Meeting, 9500 Gilman Drive, #0519, La Jolla, CA"    # street address of workshop (e.g., "123 Forth Street, Blimingen, Euphoria")
+venue: "Introduction to Data Management Best Practices"      # brief name of host site without address (e.g., "Euphoric State University")
+address: "Zoom Meeting"    # street address of workshop (e.g., "123 Forth Street, Blimingen, Euphoria")
 country: "us"    # country (lowercase two-letter ISO code such as "fr" - see https://en.wikipedia.org/wiki/ISO_3166-1)
 language: "en"   # language (lowercase two-letter ISO code such as "fr" - see https://en.wikipedia.org/wiki/ISO_639-1)
-latlng: "32.885125,-117.241173"     # fractional latitude and longitude (e.g., "41.7901128,-87.6007318"; you can use http://www.latlong.net/)
-humandate: "Feb 16 - Mar 4, 2020"  # human-readable date (e.g., "Feb 17-18, 2020")
-humantime: "12:30 pm - 1:50 pm"  # human-readable time (e.g., "9:00 am - 4:30 pm")
-startdate: "2020-02-16"  # use YYYY-MM-DD format like "2015-01-01"
-enddate: "2020-03-04"  # use YYYY-MM-DD format like" 2015-01-02"
-days: "Zoom Tuesday, Thursday"
-instructor: ["Mary Linn Bergstrom (Library)", "Reid Otsuji (Library)", "Chi Gao(GPS)" ] # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
-helper: ["Kimberly Thomas, Harry Zhao, Rick Mccosh, Stephanie Labou, TA - Chi Gao"]     # list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
-contact: "rotsuji@ucsd.edu"    # contact email address for workshop organizer, such as "grace@hopper.org"
-etherpad: "https://hackmd.io/i49hTFHZTf-z4qNVKQOMuQ" # optional (insert the URL for your Etherpad if you're using one)
+latlng: "32.8655,-117.25361"     # fractional latitude and longitude (e.g., "41.7901128,-87.6007318"; you can use http://www.latlong.net/)
+humandate: "July 23 & 24, 2021"  # human-readable date (e.g., "Feb 17-18, 2020")
+humantime: "10:00 am - 12:00 pm"  # human-readable time (e.g., "9:00 am - 4:30 pm")
+startdate: "2021-07-23"  # use YYYY-MM-DD format like "2015-01-01"
+enddate: "2021-07-30"  # use YYYY-MM-DD format like" 2015-01-02"
+days: "Virtual, Fridays"
+instructor: ["Stephanie Labou (Library)", "Reid Otsuji (Library)", "David Minor (Library), Steve Diggs (SIO)" ] # list of names like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
+helper: ["N/A"]     # list of names like ["Marlyn Wescoff", "Fran Bilas", "Ruth Lichterman"]
+contact: "rotsuji@ucsd.edu, slabou@ucsd.edu"    # contact email address for workshop organizer, such as "grace@hopper.org"
+etherpad: "https://hackmd.io/@U2NG/Hk21ZWTnu" # optional (insert the URL for your Etherpad if you're using one)
 eventbrite:       # optional (insert the alphanumeric key for Eventbrite registration, e.g., "1234567890AB")
 ---
 <!--
@@ -65,7 +65,7 @@ scrolling="auto">
 -->
 <p id="who">
   <strong>Who:</strong>
-  The course is aimed at GPS graduate students.
+  The course is for SIO students.
   <strong>You don't need to have any previous knowledge of the tools that will
     be presented at the workshop.</strong>
   </p>
@@ -82,7 +82,7 @@ scrolling="auto">
 <p id="where">
   <strong>Where:</strong>
   {{page.address}}.
-  <strong>Zoom - link and access information in Canvas<strong>
+  <strong>Zoom - link will be sent to registered attendees<strong>
 </p>
 {% endif %}
 
@@ -115,29 +115,19 @@ scrolling="auto">
   for more information.
 </p>
 
-<p id="certificate">
-  <strong>Assessment</strong>:
-  A certificate of proficiency will be given to students who:
-</p>
 
-<ul>
-  <li>Attend/view all classes</li>
-  <li>Passes quizzes</li>
-  <li>Satisfactorily completes the weekly assignments</li>
-</ul>
-
-
+<!--
 <p id = "data">
   <strong>Data:</strong>
   <ul>
     <!--
     <li>Download the <a href="http://swcarpentry.github.io/shell-novice/shell-novice-data.zip">shell-novice-files.zip </a> and move the file to your <strong>Desktop</strong>.</li>
     <li>Double-click on the zip file to unzip it. You should end up with a new folder called <strong>data-shell</strong>.</li>
-  -->
     <li>Download the <a href="http://swcarpentry.github.io/sql-novice-survey/files/survey.db">survey.db</a> and put it on your desktop inside a folder labeled "sql" .</li>
   </ul>
 
 </p>
+-->
 
 
 <p id="help">
@@ -146,14 +136,14 @@ scrolling="auto">
   <ul>
     <li> Reid Otsuji: Email <a href='mailto:{{page.contact}}'>{{page.contact}}</a></li>
 {% endif %}
-  <li>TA Chi Gao <a href='mailto:chg043@ucsd.edu'>chg043@ucsd.edu</a>, Office Hours: Zoom: Wednesday 4-5pm, Friday 5-6pm<!-- <a href="{{site.lib_data_lab}}">Library Data/GIS Lab</a> --> </li>
-  <li><a href="{{site.lib_data_lab}}">Library Data/GIS Lab</a> has R specialists</li>
+  <li>Steaphnie Labou: Email <a href='mailto:slabou@ucsd.edu'>slabou [at] ucsd.edu</a><!-- <a href="{{site.lib_data_lab}}">Library Data/GIS Lab</a> --> </li>
+  <li><a href="{{site.lib_data_lab}}">Library Data/GIS Lab</a> for further assistance</li>
 </ul>
 </p>
 <hr/>
 
 <p>
-<strong>Credits:</strong>  The course materials are adpated from the Software Carpentry <a href="http://software-carpentry.org/lessons/">lessons</a>. Many thanks to the authors of those lessons.
+<strong>Credits:</strong>  The course materials are adpated from previous Library and SIO Data Management lectures, <a href="https://data-lessons.github.io/23-rd-things/">23-Research Data Things</a>. Many thanks to the authors of those lessons.
 </p>
 
 <!--
@@ -241,6 +231,7 @@ scrolling="auto">
 
 </div>
 -->
+<!--
   <div class="col-md-6">
     <h3 id="syllabus-sql">Managing Data with SQL</h3>
     <ul>
@@ -255,7 +246,7 @@ scrolling="auto">
       <li><a href="{{site.swc_githubio}}/sql-novice-survey/reference.html">Reference...</a></li>
     </ul>
   </div>
-
+-->
 
 </div>
 <hr/>
@@ -279,7 +270,7 @@ scrolling="auto">
 <h2 id="setup">Setup</h2>
 
 <p>
-  To participate in this course, you will need
+  To participate in this workshop, you will need
   access to the software described below. In addition, you will
   need an up-to-date web browser.
 </p>
@@ -369,6 +360,7 @@ scrolling="auto">
 
 
 <!-- start of sql lite section -->
+<!--
 <div id="sql">
   <h3>SQLite</h3>
 
@@ -382,6 +374,7 @@ scrolling="auto">
   </p>
   <p>
   </p>
+
 
   <div class="row">
     <div class="col-md-4">
@@ -404,6 +397,8 @@ scrolling="auto">
       </p>
     </div>
   </div>
+-->
+
 
 <!--
   Uncomment this section if you are using our virtual machine.
